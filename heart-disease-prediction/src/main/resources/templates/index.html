@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Heart Disease Prediction</title>
+</head>
+<body>
+<h1>Heart Disease Prediction</h1>
+<form action="#" th:action="@{/predict}" th:object="${patient}" method="post">
+    <label>Age: </label><input type="number" th:field="*{age}" /><br>
+    <label>Sex: </label><input type="number" th:field="*{sex}" /><br>
+    <!-- Add other fields similarly -->
+    <button type="submit">Predict</button>
+</form>
+
+<div th:if="${result}">
+    <h2>Prediction Result: <span th:text="${result}"></span></h2>
+</div>
+</body>
+</html>
